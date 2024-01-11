@@ -109,26 +109,21 @@ export default class StoryScreen extends Component {
                 </View>
                 <View style={styles.iconContainer}>
                   {/* Ícone do alto-falante para iniciar/parar a leitura em voz alta */}
-                  <TouchableOpacity
-                   // Ao pressionar o botão, a função initiateTTS é chamada para iniciar ou parar a leitura em voz alta.
-                    onPress={() =>
+                 <TouchableOpacity 
+                    onPress={() => {
                       this.initiateTTS(
-                        this.props.route.params.story.title,    // Título da história
-                        this.props.route.params.story.author,   // Autor da história
-                        this.props.route.params.story.story,    // Conteúdo da história
-                        this.props.route.params.story.moral     // Moral da história
+                          this.props.route.params.story.title,
+                          this.props.route.params.story.author,
+                          this.props.route.params.story.story,
+                          this.props.route.params.story.moral
                       )
-                    }
+                    }}
                   >
-                    {/* 
-    O componente TouchableOpacity envolve o ícone Ionicons e responde ao evento onPress, 
-    que é acionado quando o botão é pressionado.
-  */}
                     <Ionicons
-                        name={this.state.speakerIcon}             // Nome do ícone com base no estado do alto-falante
-                        size={RFValue(30)}                         // Tamanho do ícone responsivo
-                        color={this.state.speakerColor}           // Cor do ícone com base no estado do alto-falante
-                        style={{ margin: RFValue(15) }}            // Estilo do ícone com uma margem responsiva
+                        name={this.state.speakerIcon}
+                        size={RFValue(30)}
+                        color={this.state.speakerColor}
+                        style={{margin: RFValue(15)}}
                     />
                   </TouchableOpacity>
                 </View>
